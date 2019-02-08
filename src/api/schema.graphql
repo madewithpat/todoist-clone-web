@@ -1,0 +1,32 @@
+type Query {
+   info: String!
+   me: User!
+}
+
+type Mutation {
+   register(email: String!, password: String!): AuthPayload
+   login(email: String!, password: String!): AuthPayload
+}
+
+type User {
+   id: ID!
+   name: String!
+   email: String!
+   lists: [TaskList!]!
+}
+
+type AuthPayload {
+   token: String
+   user: User
+}
+
+type TaskList {
+   id: ID!
+   name: String!
+   tasks: [Task!]!
+}
+
+type Task {
+   id: ID!
+   title: String!
+}
