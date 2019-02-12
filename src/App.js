@@ -55,14 +55,16 @@ render() {
     
     return (
       <div>
-        <h1>To Do List</h1>
-        <form onSubmit={this.addItem}>
-            <input ref={(a) => this.input = a} 
-              placeholder='please enter a task' />
-            <button type='submit'>Submit</button>
-        </form>
+        <h1>Inbox</h1>
         <TodoItems entries={this.state.items}
                     delete={this.deleteItem}/>
+        <form onSubmit={this.addItem}>
+            <input ref={(a) => this.input = a} 
+              placeholder='Add Task' /> <br />
+            <button type='submit'>Add Task</button>
+            <button type='reset'>Cancel</button>
+        </form>
+        
       </div>
     )
   }
